@@ -31,8 +31,8 @@
   function setClip(index, autoplay = false) {
     const project = projects[active], clip = project.clips[index];
     clipIndex = index;
-    video.pause(); video.poster = '/Vikram-3D/' + clip.poster;
-    video.src = '/Vikram-3D/' + clip.src; video.loop = true;
+    video.pause(); video.poster = "/Vikram-3D/" + clip.poster;
+    video.src = "/Vikram-3D/" + clip.src; video.loop = true;
     video.setAttribute('aria-label', project.title + ' — ' + clip.label);
     root.querySelectorAll('[data-console-clip]').forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
     if (autoplay) playFilm();
@@ -43,8 +43,8 @@
     root.querySelector('#console-index').textContent = `${String(active + 1).padStart(2, '0')} / ${String(projects.length).padStart(2, '0')} — ${project.label}`;
     root.querySelector('#console-project-title').textContent = project.title;
     root.querySelector('#console-project-summary').textContent = project.summary;
-    root.querySelector('#console-project-link').href = '/Vikram-3D/projects/' + project.id + '/Vikram-3D/';
-    root.querySelector('.loaded-cartridge img').src = '/Vikram-3D/' + project.poster;
+    root.querySelector('#console-project-link').href = "/Vikram-3D/projects/" + project.id + '/';
+    root.querySelector('.loaded-cartridge img').src = "/Vikram-3D/" + project.poster;
     root.querySelector('.loaded-cartridge span').textContent = 'VIKRAM R / ' + String(active + 1).padStart(2, '0');
     const clips = root.querySelector('#console-clips'); clips.replaceChildren();
     if (project.clips.length > 1) project.clips.forEach((clip, i) => {

@@ -1,8 +1,8 @@
 (() => {
   'use strict';
   const legacy = location.hash.slice(1);
-  if (location.pathname === '/Vikram-3D/' && ['work','about','contact'].includes(legacy)) {
-    location.replace('/Vikram-3D/' + legacy + '/Vikram-3D/');
+  if (location.pathname === "/Vikram-3D/" && ['work','about','contact'].includes(legacy)) {
+    location.replace("/Vikram-3D/" + legacy + '/');
     return;
   }
   const $ = selector => document.querySelector(selector);
