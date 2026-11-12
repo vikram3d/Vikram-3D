@@ -1,6 +1,7 @@
 import {readFileSync,writeFileSync,mkdirSync,readdirSync,cpSync,rmSync,existsSync} from 'node:fs';
 import {resolve,dirname,join,relative,extname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const output=resolve(root,'.github-pages-output');
 const base='/Vikram-3D/', origin='https://vikram3d.github.io';
@@ -23,6 +24,18 @@ for(const file of files){
  if(rel==='app.js')s=s.replace("location.pathname === '/'",'location.pathname === '+JSON.stringify(base)).replace("location.replace('/' + legacy + '/')",'location.replace('+JSON.stringify(base)+" + legacy + '/')");
  if(rel==='cartridge.js')s=s.replaceAll("= '/' +",'= '+JSON.stringify(base)+' +').replace("= '/projects/' +",'= '+JSON.stringify(base+'projects/')+' +');
  s=s.replaceAll('https://vikram-form-motion.vikram700405.chatgpt.site',origin+base.slice(0,-1));
+ writeFileSync(file,s);
+}
+// Version scripts and styles so an earlier Pages cache cannot retain old routes.
+for(const file of files.filter(f=>f.endsWith('.html'))){
+ let s=readFileSync(file,'utf8');
+ s=s.replace(/\b(src|href)="([^"]+\.(?:js|css))"/g,(match,attribute,url)=>{
+  if(!url.startsWith(base))return match;
+  const asset=join(output,url.slice(base.length));
+  if(!existsSync(asset))throw Error('Missing versioned asset: '+url);
+  const version=createHash('sha256').update(readFileSync(asset)).digest('hex').slice(0,12);
+  return attribute+'="'+url+'?v='+version+'"';
+ });
  writeFileSync(file,s);
 }
 writeFileSync(join(output,'.nojekyll'),'');
