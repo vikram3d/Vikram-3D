@@ -1,0 +1,27 @@
+<section class="arcade-work section-pad" id="work" data-cartridge-gallery aria-labelledby="work-title">
+  <div class="section-kicker"><span class="eyebrow">WORK / THE PROJECT ARCADE</span><span class="eyebrow">07 PROJECTS / 08 FILMS</span></div>
+  <div class="arcade-heading"><h1 id="work-title">Pick a cartridge.<br>Load a story.</h1><p>Product films. Moving worlds. Visual experiments.<br>Every cartridge opens a different perspective.</p></div>
+  <div class="cartridge-lab">
+    <div class="project-cartridges" aria-label="Choose a project cartridge">{{CARTRIDGE_CARDS}}</div>
+    <div class="console-station">
+      <div class="console-slot" aria-hidden="true"><div class="loaded-cartridge"><img src="/{{FIRST_POSTER}}" alt=""><span>VIKRAM R / 01</span></div></div>
+      <div class="project-console">
+        <div class="console-brand"><span class="console-led" aria-hidden="true"></span><span>FORM & MOTION</span><span class="console-edition">VR—01</span></div>
+        <div class="console-screen">
+          <video id="console-film" controls playsinline muted preload="none" poster="/{{FIRST_POSTER}}" aria-label="{{FIRST_TITLE}} project film"><source src="/{{FIRST_SRC}}" type="video/mp4"></video>
+          <div class="console-loading" hidden aria-hidden="true"><span>LOADING A NEW PERSPECTIVE</span><i></i></div>
+        </div>
+        <div class="console-screen-label"><span>POCKET PORTFOLIO</span><span>3D / MOTION / PLAY</span></div>
+        <div class="console-actions" hidden>
+          <div class="console-dpad" role="group" aria-label="Browse projects"><span aria-hidden="true"></span><button type="button" data-console-prev aria-label="Previous project">←</button><button type="button" data-console-next aria-label="Next project">→</button></div>
+          <div class="console-action-buttons"><button type="button" class="console-play" aria-controls="console-film" aria-label="Play project film"><span aria-hidden="true">▶</span><small>PLAY</small></button><button type="button" class="console-sound" aria-controls="console-film" aria-pressed="false" aria-label="Enable film sound"><span aria-hidden="true">♪</span><small>SOUND</small></button></div>
+        </div>
+        <div class="console-bottom"><span>VIKRAM R<br>ARTIST EDITION / 2026</span><div class="console-speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      </div>
+      <div class="console-project-info"><p class="eyebrow" id="console-index">01 / 07 — {{FIRST_CATEGORY}}</p><h2 id="console-project-title">{{FIRST_TITLE}}</h2><p id="console-project-summary">{{FIRST_SUMMARY}}</p><div id="console-clips" class="console-clips" role="group" aria-label="Choose project film"></div><a class="text-link" id="console-project-link" href="/projects/graphics-card/">Explore this project <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </div>
+  <p class="arcade-instruction"><span aria-hidden="true">↗</span> CHOOSE A CARTRIDGE TO LOAD A FILM <span class="arcade-instruction-detail">Use the console arrows to browse. Open a project for its full story.</span></p>
+  <p class="sr-only" id="cartridge-status" aria-live="polite" aria-atomic="true"></p>
+  <script type="application/json" id="cartridge-data">{{PROJECT_DATA}}</script>
+</section>

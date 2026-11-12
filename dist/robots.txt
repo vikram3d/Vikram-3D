@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vikram-form-motion.vikram700405.chatgpt.site/sitemap.xml

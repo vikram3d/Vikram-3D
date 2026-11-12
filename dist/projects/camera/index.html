@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <script>
+    (() => {
+      const state = window.portfolioIntro = { enabled: false };
+      try {
+        const legacy = location.pathname === '/' && ['work','about','contact'].includes(location.hash.slice(1));
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches || localStorage.getItem('vikram-motion') === 'off';
+        const home = location.pathname === '/' || location.pathname === '/index.html';
+        state.enabled = !legacy && !reduced && (home || new URLSearchParams(location.search).get('intro') === '1' || sessionStorage.getItem('vikram-intro-seen-v1') !== '1');
+      } catch { state.enabled = !matchMedia('(prefers-reduced-motion: reduce)').matches; }
+      if (!state.enabled) return;
+      document.documentElement.classList.add('intro-pending');
+      state.watchdog = setTimeout(() => {
+        if (window.finishPortfolioIntro) window.finishPortfolioIntro();
+        else { document.documentElement.classList.remove('intro-pending'); try { sessionStorage.setItem('vikram-intro-seen-v1','1'); } catch {} }
+      }, 5200);
+    })();
+  </script>
+  <meta name="description" content="A camera render using a dark setting and contrasting colored highlights to reveal the body, lens, and surface details.">
+  <title>Camera Study — Vikram R</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080808'/%3E%3Cpath d='M14 16l18 34 18-34H40l-8 17-8-17z' fill='%2383e8f9'/%3E%3C/svg%3E">
+  <link rel="preload" href="/assets/fonts/coda/Coda-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/assets/fonts/michroma/Michroma-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/pages.css">
+  <link rel="stylesheet" href="/intro.css">
+  <link rel="stylesheet" href="/cursor.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three.module.js"}}</script>
+  <script defer src="/vendor/gsap.min.js"></script>
+  <script defer src="/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="/intro.js"></script>
+
+  <script defer src="/app.js"></script>
+  <script defer src="/cursor.js"></script>
+  <link rel="stylesheet" href="/revisions.css">
+  <script defer src="/navigation.js"></script>
+  <link rel="canonical" href="https://vikram-form-motion.vikram700405.chatgpt.site/projects/camera/">
+</head>
+<body id="top" class="page-project" data-page="project"><div id="site-loader" class="site-loader" aria-label="Loading Vikram R’s portfolio">
+  <div class="intro-top">
+    <button id="intro-skip" type="button">Skip intro <span aria-hidden="true">↗</span></button>
+  </div>
+  <div class="intro-center" aria-hidden="true">
+    <div class="intro-orb"><canvas id="intro-particles"></canvas><p class="intro-percentage"><span id="intro-count">000</span><span class="intro-percent-sign">%</span></p></div>
+    <div class="intro-signature"><p class="intro-tagline">FORM. LIGHT. MOTION.</p><p class="intro-name">VIKRAM R<span>.</span></p></div>
+  </div>
+  <span class="intro-sr" role="status">Preparing the portfolio.</span>
+</div><a class="skip-link" href="#main-content">Skip to content</a><header class="header"><a class="wordmark" href="/" aria-label="Vikram R, home">VIKRAM<span> R</span></a><nav class="desktop-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/work/" aria-current="location">Work</a><a href="/about/">About</a></nav><a class="contact-link" href="/contact/">Let’s talk <span aria-hidden="true">↗</span></a><details class="mobile-nav"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="/">Home</a><a href="/work/" aria-current="location">Work</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></details></header><main id="main-content"><article class="project-page"><div class="project-breadcrumb"><a href="/work/">← All work</a><span class="eyebrow">04 / 07</span></div><header class="project-page-heading"><p class="eyebrow orange">PRODUCT VISUALISATION / VIKRAM R</p><h1 data-reveal>Camera Study<span class="orange">.</span></h1><p class="project-page-summary">A study in silhouette and reflected light.</p></header><div class="project-films"><section class="project-film" aria-labelledby="film-0"><div class="video-heading"><h2 id="film-0" class="eyebrow">01 / Watch film</h2><button class="film-play" data-play-film="player-0" aria-controls="player-0" aria-label="Play Watch film">Play film ↗</button><span class="eyebrow">16:9 / 00:04</span></div><video id="player-0" controls playsinline preload="metadata" poster="/assets/camera-study.jpg" aria-label="Camera Study — Watch film"><source src="/assets/camera-study.mp4" type="video/mp4"><a href="/assets/camera-study.mp4">Download this render</a></video><a class="video-download" href="/assets/camera-study.mp4" download>Download render ↙</a></section></div><div class="project-story"><h2>About this study.</h2><div><p>A camera render using a dark setting and contrasting colored highlights to reveal the body, lens, and surface details.</p><p class="eyebrow project-format">01 FILM / 16:9 / PRODUCT</p></div></div><nav class="project-pagination" aria-label="Project navigation"><a href="/work/">Back to all work ↖</a><a class="next-project" href="/projects/automotive/"><span class="eyebrow">NEXT PROJECT</span><span>Automotive Study ↗</span></a></nav></article></main><footer class="site-footer" aria-labelledby="footer-title"><div class="footer-top"><div><p class="eyebrow">THE NEXT GOOD IDEA</p><h2 id="footer-title">Let’s make<br>something <span>move.</span></h2></div><div class="footer-connect"><p>3D visuals. Cinematic animation.<br>Ideas brought to life through motion.</p><a class="footer-email" href="mailto:vikramvikram@gmail.com">vikramvikram@gmail.com <span aria-hidden="true">↗</span></a><a class="text-link" href="/contact/">Start a conversation <span aria-hidden="true">↗</span></a></div></div><div class="footer-middle"><a class="wordmark" href="/">VIKRAM <span>R</span></a><nav class="footer-sitemap" aria-label="Footer navigation"><a href="/">Home</a><a href="/work/" aria-current="location">Work</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><div class="social-links"><a href="https://www.instagram.com/specter___zero/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/vikram-r-59585b415/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div><div class="footer-bottom"><p>© 2026 Vikram R</p><span>FORM, LIGHT & MOTION</span><div><button id="motion-toggle" class="motion-toggle" aria-pressed="true">MOTION: ON</button><a href="#top">Back to top ↑</a></div></div></footer><noscript><style>[data-play-film],.filters,#motion-toggle{display:none}</style><p class="noscript-message">Films, artwork, page navigation, and contact information remain available without JavaScript.</p></noscript></body></html>

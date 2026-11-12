@@ -1,0 +1,38 @@
+{
+  "source": "Car.blend",
+  "meshes": 191,
+  "original_evaluated_triangles": 4474248,
+  "export_triangles": 603278,
+  "blender_bounds": [
+    [
+      -3.066765069961548,
+      -6.403088808059692,
+      0
+    ],
+    [
+      3.066765069961548,
+      6.403088808059692,
+      3.5957202911376953
+    ]
+  ],
+  "front": "Blender -Y; glTF +Z",
+  "materials": "PBR approximations of procedural originals; missing tire images replaced by plain rubber surface with existing modeled tread.",
+  "bytes": 14511824,
+  "gltf_bounds": [
+    [
+      -3.066765069961548,
+      0,
+      -6.403088808059692
+    ],
+    [
+      3.066765069961548,
+      3.5957202911376953,
+      6.403088808059692
+    ]
+  ],
+  "gltf_dimensions": [
+    6.133530139923096,
+    3.5957202911376953,
+    12.806177616119385
+  ]
+}

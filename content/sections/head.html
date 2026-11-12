@@ -1,0 +1,38 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <script>
+    (() => {
+      const state = window.portfolioIntro = { enabled: false };
+      try {
+        const legacy = location.pathname === '/' && ['work','about','contact'].includes(location.hash.slice(1));
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches || localStorage.getItem('vikram-motion') === 'off';
+        const home = location.pathname === '/' || location.pathname === '/index.html';
+        state.enabled = !legacy && !reduced && (home || new URLSearchParams(location.search).get('intro') === '1' || sessionStorage.getItem('vikram-intro-seen-v1') !== '1');
+      } catch { state.enabled = !matchMedia('(prefers-reduced-motion: reduce)').matches; }
+      if (!state.enabled) return;
+      document.documentElement.classList.add('intro-pending');
+      state.watchdog = setTimeout(() => {
+        if (window.finishPortfolioIntro) window.finishPortfolioIntro();
+        else { document.documentElement.classList.remove('intro-pending'); try { sessionStorage.setItem('vikram-intro-seen-v1','1'); } catch {} }
+      }, 5200);
+    })();
+  </script>
+  <meta name="description" content="Vikram R — 3D designer and motion graphics artist. Exploring cinematic visuals, abstract motion and digital experiences through form, light and motion.">
+  <title>Vikram R — Form & Motion</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080808'/%3E%3Cpath d='M14 16l18 34 18-34H40l-8 17-8-17z' fill='%2383e8f9'/%3E%3C/svg%3E">
+  <link rel="preload" href="/assets/fonts/coda/Coda-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/assets/fonts/michroma/Michroma-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="/intro.css">
+  <link rel="stylesheet" href="/cursor.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="/intro.js"></script>
+  <script defer src="projects.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="/cursor.js"></script>
+</head>

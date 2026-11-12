@@ -1,0 +1,143 @@
+[
+  {
+    "id": "graphics-card",
+    "title": "Graphics Card",
+    "category": "product",
+    "label": "3D PRODUCT ANIMATION",
+    "summary": "A product brought into focus through form, light, and movement.",
+    "description": "A cinematic graphics-card render exploring the product through close-up detail, changing camera angles, and dramatic lighting.",
+    "poster": "assets/graphics-card-cover.jpg",
+    "alt": "A graphics card in dramatic lighting against a red atmospheric background",
+    "clips": [
+      {
+        "label": "Product film",
+        "src": "assets/graphics-card-render.mp4",
+        "poster": "assets/graphics-card-cover.jpg",
+        "duration": "00:24",
+        "format": "16:9"
+      }
+    ]
+  },
+  {
+    "id": "controller",
+    "title": "Controller Studies",
+    "category": "product",
+    "label": "PRODUCT VISUALISATION",
+    "summary": "One object. Two atmospheres.",
+    "description": "Two controller renders exploring contrasting presentations: a minimal studio reveal and a rocky, atmospheric setting. Both films retain their original vertical composition.",
+    "poster": "assets/controller-cavern.jpg",
+    "alt": "A white and black controller framed by dark rock formations",
+    "portrait": true,
+    "clips": [
+      {
+        "label": "Studio reveal",
+        "src": "assets/controller-studio.mp4",
+        "poster": "assets/controller-studio.jpg",
+        "duration": "00:05",
+        "format": "9:16"
+      },
+      {
+        "label": "Cavern study",
+        "src": "assets/controller-cavern.mp4",
+        "poster": "assets/controller-cavern.jpg",
+        "duration": "00:04",
+        "format": "9:16"
+      }
+    ]
+  },
+  {
+    "id": "keyboard",
+    "title": "Keyboard Assembly",
+    "category": "product",
+    "label": "PRODUCT ANIMATION",
+    "summary": "From individual keys to a complete form.",
+    "description": "An exploded keyboard animation, bringing individual keys and components together against a dark background.",
+    "poster": "assets/keyboard-assembly.jpg",
+    "alt": "An exploded mechanical keyboard with floating keycaps",
+    "clips": [
+      {
+        "label": "Watch film",
+        "src": "assets/keyboard-assembly.mp4",
+        "poster": "assets/keyboard-assembly.jpg",
+        "duration": "00:05",
+        "format": "16:9"
+      }
+    ]
+  },
+  {
+    "id": "camera",
+    "title": "Camera Study",
+    "category": "product",
+    "label": "PRODUCT VISUALISATION",
+    "summary": "A study in silhouette and reflected light.",
+    "description": "A camera render using a dark setting and contrasting colored highlights to reveal the body, lens, and surface details.",
+    "poster": "assets/camera-study.jpg",
+    "alt": "A camera and lens with contrasting colored studio lighting",
+    "clips": [
+      {
+        "label": "Watch film",
+        "src": "assets/camera-study.mp4",
+        "poster": "assets/camera-study.jpg",
+        "duration": "00:04",
+        "format": "16:9"
+      }
+    ]
+  },
+  {
+    "id": "automotive",
+    "title": "Automotive Study",
+    "category": "product",
+    "label": "AUTOMOTIVE ANIMATION",
+    "summary": "A classic silhouette, in motion.",
+    "description": "A yellow coupe moving through a bright architectural setting, with repeating structural forms and directional shadows.",
+    "poster": "assets/automotive-study.jpg",
+    "alt": "A yellow classic coupe on a road beside white architectural structures",
+    "clips": [
+      {
+        "label": "Watch film",
+        "src": "assets/automotive-study.mp4",
+        "poster": "assets/automotive-study.jpg",
+        "duration": "00:04",
+        "format": "16:9"
+      }
+    ]
+  },
+  {
+    "id": "ocean",
+    "title": "Ocean Study",
+    "category": "environment",
+    "label": "CINEMATIC ENVIRONMENT",
+    "summary": "Open water. An approaching horizon.",
+    "description": "A cinematic ocean environment featuring a ship, rolling water, and a dramatic cloud-filled sky.",
+    "poster": "assets/ocean-study.jpg",
+    "alt": "A ship on dark ocean waves beneath a dramatic cloudy sky",
+    "clips": [
+      {
+        "label": "Watch film",
+        "src": "assets/ocean-study.mp4",
+        "poster": "assets/ocean-study.jpg",
+        "duration": "00:21",
+        "format": "16:9"
+      }
+    ]
+  },
+  {
+    "id": "particles",
+    "title": "Particle Orbit",
+    "category": "motion",
+    "label": "ABSTRACT MOTION",
+    "summary": "Light tracing its own orbit.",
+    "description": "An abstract motion study of glowing orange particles and orbital light trails against black.",
+    "poster": "assets/particle-orbit.jpg",
+    "alt": "A glowing orange particle sphere with orbiting light trails",
+    "clips": [
+      {
+        "label": "Watch film",
+        "src": "assets/particle-orbit.mp4",
+        "poster": "assets/particle-orbit.jpg",
+        "duration": "00:21",
+        "format": "16:9"
+      }
+    ]
+  }
+]
