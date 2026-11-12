@@ -14,7 +14,7 @@ Run `npm run build`, `npm run check`, and `node scripts/check-pages.mjs`. The bu
 
 - Home: a smaller name with a cyan R; transparent glass introduction aligned with the rotating role; visible work link and credits; a larger About heading; three projects in a scroll-driven card stack.
 - Navigation: a floating glass header changes on scroll, with equally sized links and no project count.
-- Work: seven cartridges load eight project films into a handheld console. Keyboard selection, physical controls, sound, and both controller clips work. Links remain usable without JavaScript.
+- Work: seven cartridges load eight project films into a handheld console. The four individual directional buttons use up/left for the previous project and down/right for the next. Keyboard selection, physical controls, sound, and both controller clips work. Links remain usable without JavaScript.
 - Footer: a unified contact area with email, navigation, social links, motion control, and a back-to-top link replaces the previous separated closing blocks.
 - Playground has been removed from the published pages, navigation, and sitemap. Its former source and car assets remain archived in this repository for possible future use; they are not loaded by the website.
 
@@ -30,4 +30,4 @@ Live portfolio: https://vikram-form-motion.vikram700405.chatgpt.site/
 
 Published portfolio: https://vikram3d.github.io/Vikram-3D/
 
-Run `npm run build:github` to prepare `.github-pages-output/`. Publish that generated folder to the root of the `gh-pages` branch. GitHub Pages is configured to serve that branch. This separate build prefixes navigation, fonts, films, and scripts for the project URL; the normal `dist/` build remains compatible with root hosting.
+Run `npm run build:github` to generate `.github-pages-output/`. Publish that folder to the root of the existing `gh-pages` branch. The Pages build prefixes navigation, fonts, films, and scripts for the project URL; the normal `dist/` build stays compatible with local preview and root hosting.

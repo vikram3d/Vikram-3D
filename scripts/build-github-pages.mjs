@@ -52,3 +52,4 @@ for(const file of pages){
 if(pages.length!==11)errors.push('Expected 11 pages');
 if(errors.length)throw Error(errors.join('\n'));
 console.log('Verified '+pages.length+' GitHub Pages routes, media, styles and navigation paths.');
+

@@ -1,0 +1,18 @@
+/* Four individual directional buttons for the original console. */
+.console-actions{min-height:108px}
+.console-dpad{width:104px;height:104px;flex:0 0 104px}
+.console-dpad::before{display:none}
+.console-dpad::after{content:'';position:absolute;width:12px;height:12px;left:46px;top:46px;border-radius:3px;transform:rotate(45deg);background:linear-gradient(135deg,#182c36,#0b1922);box-shadow:inset 0 1px 1px #ffffff14,0 1px 1px #0009;pointer-events:none}
+.console-dpad .dpad-key{position:absolute;display:grid;place-items:center;width:36px;height:41px;border:0;border-radius:7px;background:transparent;color:#aac4ce;padding:0;isolation:isolate;filter:drop-shadow(2px 5px 3px #0008);transition:transform .12s,color .12s;text-shadow:0 1px 1px #000}
+.console-dpad .dpad-key::before,.console-dpad .dpad-key::after{content:'';position:absolute;inset:0;border-radius:6px;clip-path:var(--key-shape);pointer-events:none}
+.console-dpad .dpad-key::before{background:#07131c;transform:translateY(4px)}
+.console-dpad .dpad-key::after{background:linear-gradient(140deg,#405965,#263e4d 48%,#162c3a);box-shadow:inset 1px 2px 1px #bddce35c,inset -1px -1px 1px #05111d;z-index:0}
+.console-dpad .dpad-key>span{position:relative;z-index:1;font:12px/1 Arial,sans-serif;pointer-events:none}
+.console-dpad .dpad-up{left:34px;top:0;--key-shape:polygon(14% 0,86% 0,100% 14%,100% 68%,50% 100%,0 68%,0 14%)}
+.console-dpad .dpad-down{left:34px;top:63px;--key-shape:polygon(50% 0,100% 32%,100% 86%,86% 100%,14% 100%,0 86%,0 32%)}
+.console-dpad .dpad-left{left:0;top:34px;width:41px;height:36px;--key-shape:polygon(14% 0,68% 0,100% 50%,68% 100%,14% 100%,0 86%,0 14%)}
+.console-dpad .dpad-right{left:63px;top:34px;width:41px;height:36px;--key-shape:polygon(32% 0,86% 0,100% 14%,100% 86%,86% 100%,32% 100%,0 50%)}
+.console-dpad .dpad-key:hover{color:#b8f8ff}
+.console-dpad .dpad-key:hover::after{background:linear-gradient(140deg,#597b89,#345565 48%,#203e50)}
+.console-dpad .dpad-key:active{transform:translateY(3px);filter:drop-shadow(1px 2px 2px #0008)}
+.console-dpad .dpad-key:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
