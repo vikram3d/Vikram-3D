@@ -25,3 +25,9 @@ Project films are user-supplied. Covers are extracted frames. Project titles rem
 The Motion toggle and system reduced-motion preference bypass cartridge flight, scroll pinning, and header transitions. Essential navigation and project information remain accessible without JavaScript. Michroma headings retain their bold treatment, with Coda for body text and Arial for longer introductory copy.
 
 Live portfolio: https://vikram-form-motion.vikram700405.chatgpt.site/
+
+## GitHub Pages
+
+Published portfolio: https://vikram3d.github.io/Vikram-3D/
+
+Run `npm run build:github` to prepare `.github-pages-output/`. Publish that generated folder to the root of the `gh-pages` branch. GitHub Pages is configured to serve that branch. This separate build prefixes navigation, fonts, films, and scripts for the project URL; the normal `dist/` build remains compatible with root hosting.

@@ -7,3 +7,5 @@ source-assets/
 qa/
 .qa/
 download-extras/
+
+.github-pages-output/
