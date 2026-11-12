@@ -1,0 +1,37 @@
+.theme-cursor { position: fixed; inset: 0 auto auto 0; width: 0; height: 0; z-index: 10000; pointer-events: none; opacity: 0; transition: opacity .16s ease; }
+.theme-cursor.is-visible { opacity: 1; }
+.cursor-dot, .cursor-ring, .cursor-target { position: fixed; top: 0; left: 0; pointer-events: none; will-change: transform; }
+.cursor-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 4px var(--accent), 0 0 12px rgb(var(--accent-rgb) / .9), 0 0 24px rgb(var(--accent-rgb) / .5); }
+.cursor-ring { width: 54px; height: 54px; color: var(--accent); transition: width .22s, height .22s, color .15s; }
+.cursor-ring::before { content: ''; position: absolute; inset: -20px; border-radius: 50%; background: radial-gradient(circle, rgb(var(--accent-rgb) / .14), rgb(var(--accent-rgb) / .07) 35%, transparent 70%); pointer-events: none; }
+.scope-geometry { display: block; width: 100%; height: 100%; overflow: visible; stroke: currentColor; stroke-width: .85; filter: drop-shadow(0 0 3px currentColor) drop-shadow(0 0 9px rgb(var(--accent-rgb) / .7)); transform-origin: 50% 50%; transition: transform .15s, filter .2s; }
+.scope-dial { opacity: .32; stroke-width: 1; stroke-dasharray: 2 12; transform-origin: 50px 50px; transition: transform .4s ease, opacity .2s; }
+.scope-lens { opacity: .65; }
+.scope-inner { opacity: .19; stroke-width: .6; }
+.scope-cross { opacity: .8; stroke-width: .65; }
+.scope-ticks { opacity: .65; stroke-width: .7; }
+.scope-aim { opacity: .9; stroke-width: .7; }
+.cursor-symbol { position: absolute; top: calc(100% + 3px); left: 50%; transform: translateX(-50%); opacity: 0; color: rgb(var(--accent-rgb) / .9); text-shadow: 0 0 7px currentColor; font: 7px/1 var(--body); letter-spacing: .18em; white-space: nowrap; transition: opacity .15s; }
+.theme-cursor.is-link .cursor-ring { width: 62px; height: 62px; }
+.theme-cursor.is-link .scope-geometry { filter: drop-shadow(0 0 4px currentColor) drop-shadow(0 0 13px rgb(var(--accent-rgb) / .9)); }
+.theme-cursor.is-link .scope-dial { opacity: .9; }
+.theme-cursor.is-link .scope-lens { opacity: 1; }
+.theme-cursor.is-link .cursor-symbol, .theme-cursor.is-drag .cursor-symbol { opacity: 1; }
+.theme-cursor.is-drag .cursor-ring { color: #ebe9e2; }
+.theme-cursor.is-drag .cursor-symbol { color: #ebe9e2b0; }
+.theme-cursor.is-pressed .cursor-ring { color: #ebe9e2; }
+.theme-cursor.is-pressed .scope-geometry { transform: scale(.88); }
+.cursor-target { width: var(--target-width,30px); height: var(--target-height,30px); opacity: 0; transition: width .23s cubic-bezier(.2,.8,.2,1), height .23s cubic-bezier(.2,.8,.2,1), opacity .18s; }
+.theme-cursor.is-link .cursor-target { opacity: 1; }
+.cursor-corner { position: absolute; display: block; width: 9px; height: 9px; border: 0 solid var(--accent); filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px rgb(var(--accent-rgb) / .7)); transition: border-color .15s; }
+.corner-tl { top: 0; left: 0; border-top-width: 1px; border-left-width: 1px; }
+.corner-tr { top: 0; right: 0; border-top-width: 1px; border-right-width: 1px; }
+.corner-bl { bottom: 0; left: 0; border-bottom-width: 1px; border-left-width: 1px; }
+.corner-br { bottom: 0; right: 0; border-bottom-width: 1px; border-right-width: 1px; }
+.theme-cursor.is-pressed .cursor-corner { border-color: #ebe9e2; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html.cursor-active, html.cursor-active * { cursor: none !important; }
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .theme-cursor { display: none; }
+}
