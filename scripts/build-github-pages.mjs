@@ -20,7 +20,8 @@ for(const file of files){
    .replaceAll("location.pathname === '/index.html'",'location.pathname === '+JSON.stringify(base+'index.html'));
  }
  if(file.endsWith('.css'))s=s.replace(/url\((['"]?)\/(?!\/)/g,(_,quote)=>'url('+quote+base);
- if(['app.js','cartridge.js'].includes(rel))s=s.replace(/(['"])\/(?!\/)/g,(_,quote)=>quote+base);
+ if(rel==='app.js')s=s.replace("location.pathname === '/'",'location.pathname === '+JSON.stringify(base)).replace("location.replace('/' + legacy + '/')",'location.replace('+JSON.stringify(base)+" + legacy + '/')");
+ if(rel==='cartridge.js')s=s.replaceAll("= '/' +",'= '+JSON.stringify(base)+' +').replace("= '/projects/' +",'= '+JSON.stringify(base+'projects/')+' +');
  s=s.replaceAll('https://vikram-form-motion.vikram700405.chatgpt.site',origin+base.slice(0,-1));
  writeFileSync(file,s);
 }
