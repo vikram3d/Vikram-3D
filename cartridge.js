@@ -96,8 +96,13 @@
       cards[target].focus({ preventScroll: true }); select(target);
     });
   });
-  root.querySelector('[data-console-prev]').addEventListener('click', () => select(active - 1));
-  root.querySelector('[data-console-next]').addEventListener('click', () => select(active + 1));
+  root.querySelectorAll('[data-console-prev]').forEach(button => button.addEventListener('click', () => select(active - 1)));
+  root.querySelectorAll('[data-console-next]').forEach(button => button.addEventListener('click', () => select(active + 1)));
+  root.querySelector('.console-dpad').addEventListener('keydown', event => {
+    if (!['ArrowUp', 'ArrowLeft', 'ArrowRight', 'ArrowDown'].includes(event.key)) return;
+    event.preventDefault();
+    select(active + (['ArrowUp', 'ArrowLeft'].includes(event.key) ? -1 : 1));
+  });
   play.addEventListener('click', () => { if (root.hasAttribute('aria-busy')) return; if (video.paused) playFilm(); else video.pause(); });
   sound.addEventListener('click', () => { video.muted = !video.muted; sound.setAttribute('aria-pressed', String(!video.muted)); sound.setAttribute('aria-label', video.muted ? 'Enable film sound' : 'Mute film sound'); });
   ['play', 'pause', 'ended'].forEach(event => video.addEventListener(event, updatePlayback));
