@@ -25,7 +25,7 @@
   const scrollOffset = () => pinTop - runway.getBoundingClientRect().top;
   const scrollIndex = offset => Math.max(0, Math.min(shown.length - 1, Math.floor(offset / stepDistance)));
   function configureScroll() {
-    scrollBrowsing = !!runway && !reduced() && shown.length > 1 && innerHeight >= 560;
+    scrollBrowsing = !!runway && !reduced() && shown.length > 1 && innerHeight >= 680 && innerWidth >= 760;
     runway?.classList.toggle('is-scroll-browsing', scrollBrowsing);
     if (hint) hint.textContent = scrollBrowsing ? 'SCROLL OR DRAG TO EXPLORE' : 'DRAG TO EXPLORE';
     if (hintArrow) hintArrow.textContent = scrollBrowsing ? '↕' : '↔';
