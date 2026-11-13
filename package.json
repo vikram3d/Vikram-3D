@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.mjs",
     "build": "node scripts/build-site.mjs",
-    "check": "node --check dist/app.js && node --check dist/intro.js && node --check dist/loader-object.js && node --check dist/hero-aero.js && node --check dist/aero-shards.js && node --check dist/hero-personal.js && node --check dist/cursor.js && node --check dist/depth-carousel.js && node --check dist/scene.js && node --check server.mjs && node --check dist/cartridge.js && node --check dist/car-scene.js && node --check dist/navigation.js && node --check dist/fullscreen.js",
+    "check": "node --check dist/app.js && node --check dist/intro.js && node --check dist/hero-aero.js && node --check dist/aero-shards.js && node --check dist/hero-personal.js && node --check dist/cursor.js && node --check dist/depth-carousel.js && node --check dist/scene.js && node --check server.mjs && node --check dist/cartridge.js && node --check dist/car-scene.js && node --check dist/navigation.js && node --check dist/fullscreen.js",
     "build:github": "node scripts/build-site.mjs && node scripts/build-github-pages.mjs"
   }
 }
