@@ -6,6 +6,7 @@
   const cards = [...root.querySelectorAll('[data-depth-card]')];
   const work = root.closest('[data-depth-work]');
   const runway = root.closest('[data-depth-runway]');
+  const screenGallery = work.hasAttribute('data-screen-gallery');
   const hint = work.querySelector('[data-depth-hint]');
   const hintArrow = hint?.nextElementSibling;
   const filters = [...work.querySelectorAll('[data-filter]')];
@@ -25,7 +26,7 @@
   const scrollOffset = () => pinTop - runway.getBoundingClientRect().top;
   const scrollIndex = offset => Math.max(0, Math.min(shown.length - 1, Math.floor(offset / stepDistance)));
   function configureScroll() {
-    scrollBrowsing = !!runway && !reduced() && shown.length > 1 && innerHeight >= 680 && innerWidth >= 760;
+    scrollBrowsing = !screenGallery && !!runway && !reduced() && shown.length > 1 && innerHeight >= 680 && innerWidth >= 760;
     runway?.classList.toggle('is-scroll-browsing', scrollBrowsing);
     if (hint) hint.textContent = scrollBrowsing ? 'SCROLL OR DRAG TO EXPLORE' : 'DRAG TO EXPLORE';
     if (hintArrow) hintArrow.textContent = scrollBrowsing ? '↕' : '↔';
