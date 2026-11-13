@@ -31,3 +31,10 @@ Live portfolio: https://vikram-form-motion.vikram700405.chatgpt.site/
 Published portfolio: https://vikram3d.github.io/Vikram-3D/
 
 Run `npm run build:github` to generate `.github-pages-output/`. Publish that folder to the root of the existing `gh-pages` branch. The Pages build prefixes navigation, fonts, films, and scripts for the project URL; the normal `dist/` build stays compatible with local preview and root hosting.
+## Responsive full-screen layout
+
+Each main section now fills at least the available screen height. The first section accounts for the navigation bar; later sections and film panels fill a full screen. Content stays in normal flow and can grow on small or short screens, rather than being squeezed, clipped, or hidden.
+
+`dist/fullscreen.css` handles the responsive section layout. `dist/fullscreen.js` fits active project cards to their stage and keeps the inserted cartridge attached to the console. On phones all seven cartridge choices are in a visible grid. The latest ZIP's email address, scroll-aware navigation, and four separate console direction buttons are preserved.
+
+Validation covered 42 combinations: six page types at desktop, laptop, short-laptop, tablet, phone, small-phone, and landscape-phone sizes. Navigation, console directions, both controller films, and keyboard menu access were checked separately.
