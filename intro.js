@@ -9,22 +9,18 @@
   }
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const skip = document.getElementById('intro-skip');
-  const count = document.getElementById('intro-count');
   const counter = { value: 0 };
   const timers = new Set(), resourceCleanup = [];
   const inertElements = [...document.body.children].filter(element => element !== loader && !['SCRIPT','NOSCRIPT'].includes(element.tagName)).map(element => ({ element, inert: element.inert }));
   let finished = false, exiting = false, nameAnimation, exitAnimation;
-  const phase = document.getElementById('intro-phase');
   inertElements.forEach(({element}) => { element.inert = true; });
   const wait = milliseconds => new Promise(resolve => {
     const timer = setTimeout(() => { timers.delete(timer); resolve(); }, milliseconds);
     timers.add(timer);
   });
   const drawProgress = () => {
-    count.textContent = String(Math.round(counter.value));
     loader.style.setProperty('--intro-progress',counter.value / 100);
     loader.style.setProperty('--intro-spread',Math.max(0,1 - counter.value / 78));
-    phase.textContent = counter.value >= 99 ? 'Ready to explore' : counter.value > 55 ? 'Lighting the scene' : 'Building form';
   };
   const progress = (value,duration=.8) => {
     if (finished) return;
@@ -61,8 +57,7 @@
 
   if (window.gsap) {
     nameAnimation = gsap.timeline()
-      .from(loader.querySelector('.intro-orb'), {opacity:0,scale:.94,duration:.8,ease:'power2.out'}, 0)
-      .from(loader.querySelector('.intro-signature'), {opacity:0,y:8,duration:.8,ease:'power2.out'}, .45);
+      .from(loader.querySelector('.intro-orb'), {opacity:0,scale:.94,duration:.8,ease:'power2.out'}, 0);
   }
 
   function imageReady(image) {
@@ -96,7 +91,6 @@
     if (window.gsap) {
       exitAnimation = gsap.timeline({onComplete:finish})
         .to(loader.querySelector('.intro-orb'),{opacity:0,scale:1.08,duration:.55,ease:'power2.in'},0)
-        .to(loader.querySelector('.intro-signature'),{opacity:0,duration:.3},0)
         .to(loader,{opacity:0,duration:.65,ease:'power2.inOut'},.2);
     } else { loader.classList.add('intro-fallback-exit'); await wait(520); finish(); }
   })().catch(finish);
